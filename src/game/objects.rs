@@ -66,7 +66,6 @@ impl Drawable for Player {
         self.rect
     }
 }
-
 pub enum Tile {
     Empty,
     Wall,
