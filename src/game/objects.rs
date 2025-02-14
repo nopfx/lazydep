@@ -67,7 +67,6 @@ impl Drawable for Player {
     }
 }
 
-// Tile Enum
 pub enum Tile {
     Empty,
     Wall,
