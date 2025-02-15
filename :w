@@ -54,30 +54,15 @@ impl GameApp {
                     Event::KeyDown {
                         keycode: Some(Keycode::Down),
                         ..
-                    } => move_object(
-                        &self.walls,
-                        &mut self.objects,
-                        &Positions::Down,
-                        &Tile::Player,
-                    ),
+                    } => move_object(&mut self.objects, &Positions::Down, &Tile::Player),
                     Event::KeyDown {
                         keycode: Some(Keycode::Right),
                         ..
-                    } => move_object(
-                        &self.walls,
-                        &mut self.objects,
-                        &Positions::Right,
-                        &Tile::Player,
-                    ),
+                    } => move_object(&mut self.objects, &Positions::Right, &Tile::Player),
                     Event::KeyDown {
                         keycode: Some(Keycode::Left),
                         ..
-                    } => move_object(
-                        &self.walls,
-                        &mut self.objects,
-                        &Positions::Left,
-                        &Tile::Player,
-                    ),
+                    } => move_object(&mut self.objects, &Positions::Left, &Tile::Player),
                     _ => {}
                 }
             }

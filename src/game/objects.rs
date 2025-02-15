@@ -66,10 +66,18 @@ impl Drawable for Player {
         self.rect
     }
 }
+#[derive(PartialEq, Eq, Clone)]
 pub enum Tile {
     Empty,
     Wall,
     Can,
     Portal,
     Player,
+}
+#[derive(PartialEq, Eq, Clone)]
+pub enum Positions {
+    Up,
+    Down,
+    Left,
+    Right,
 }
