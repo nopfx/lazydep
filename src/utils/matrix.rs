@@ -6,19 +6,19 @@ use sdl3::rect::Rect;
 use sdl3::render::Canvas;
 use sdl3::video::Window;
 
-fn find(matrix: &Vec<Vec<Tile>>, what: &Tile) -> Vec<usize> {
+fn find(matrix: &[Vec<Tile>], what: &Tile) -> Vec<usize> {
     for (y, row) in matrix.iter().enumerate() {
         for (x, tile) in row.iter().enumerate() {
             if tile.eq(what) {
-                return vec![y as usize, x as usize];
+                return vec![y, x];
             }
         }
     }
     vec![]
 }
 pub fn move_object(
-    walls: &Vec<Vec<Tile>>,
-    matrix: &mut Vec<Vec<Tile>>,
+    walls: &[Vec<Tile>],
+    matrix: &mut [Vec<Tile>],
     position: &Positions,
     object: &Tile,
 ) {
@@ -99,10 +99,9 @@ pub fn move_object(
                 }
             }
         }
-        _ => {}
     }
 }
-pub fn draw_matrix(canvas: &mut Canvas<Window>, matrix: &Vec<Vec<Tile>>) {
+pub fn draw_matrix(canvas: &mut Canvas<Window>, matrix: &[Vec<Tile>]) {
     for (y, row) in matrix.iter().enumerate() {
         for (x, tile) in row.iter().enumerate() {
             let rect = Rect::new((x * 20) as i32, (y * 20) as i32, 20, 20);
@@ -116,28 +115,28 @@ pub fn draw_matrix(canvas: &mut Canvas<Window>, matrix: &Vec<Vec<Tile>>) {
                 Tile::Wall => {
                     let wall: Wall = Wall {
                         sprite: wall_color,
-                        rect: rect,
+                        rect,
                     };
                     wall.draw(canvas);
                 }
                 Tile::Can => {
                     let can: Can = Can {
                         sprite: box_color,
-                        rect: rect,
+                        rect,
                     };
                     can.draw(canvas);
                 }
                 Tile::Portal => {
                     let portal: Portal = Portal {
                         sprite: portal_color,
-                        rect: rect,
+                        rect,
                     };
                     portal.draw(canvas);
                 }
                 Tile::Player => {
                     let player: Player = Player {
                         sprite: player_color,
-                        rect: rect,
+                        rect,
                     };
                     player.draw(canvas);
                 }
