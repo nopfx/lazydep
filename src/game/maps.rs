@@ -281,7 +281,7 @@ pub fn get_map() -> Vec<Vec<Tile>> {
         vec![
             Tile::Wall,
             Tile::Empty,
-            Tile::Empty,
+            Tile::Wall,
             Tile::Empty,
             Tile::Empty,
             Tile::Empty,
@@ -297,9 +297,9 @@ pub fn get_map() -> Vec<Vec<Tile>> {
         ],
         vec![
             Tile::Wall,
-            Tile::Empty,
-            Tile::Empty,
-            Tile::Empty,
+            Tile::Wall,
+            Tile::Wall,
+            Tile::Wall,
             Tile::Empty,
             Tile::Empty,
             Tile::Empty,
