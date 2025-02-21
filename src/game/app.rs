@@ -43,7 +43,7 @@ impl GameApp {
                         ..
                     } => self.running = false,
                     Event::KeyDown {
-                        keycode: Some(Keycode::Up),
+                        keycode: Some(Keycode::K),
                         ..
                     } => move_object(
                         &self.walls,
@@ -52,7 +52,7 @@ impl GameApp {
                         &Tile::Player,
                     ),
                     Event::KeyDown {
-                        keycode: Some(Keycode::Down),
+                        keycode: Some(Keycode::J),
                         ..
                     } => move_object(
                         &self.walls,
@@ -61,7 +61,7 @@ impl GameApp {
                         &Tile::Player,
                     ),
                     Event::KeyDown {
-                        keycode: Some(Keycode::Right),
+                        keycode: Some(Keycode::L),
                         ..
                     } => move_object(
                         &self.walls,
@@ -70,7 +70,7 @@ impl GameApp {
                         &Tile::Player,
                     ),
                     Event::KeyDown {
-                        keycode: Some(Keycode::Left),
+                        keycode: Some(Keycode::H),
                         ..
                     } => move_object(
                         &self.walls,
